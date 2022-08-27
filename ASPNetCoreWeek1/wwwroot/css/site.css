@@ -16,3 +16,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.CrseStdntModel {
+    display: none;
+}
+.nav-link {
+    cursor: crosshair;
+}

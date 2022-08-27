@@ -1,0 +1,67 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<div class="text-center">
+    <h1 class ="display-4">Course Index</h1>
+
+    <table class ="table">
+        <thead>
+            <tr>
+                <th>Course ID</th>
+                <th> Course Name</th>
+                <th> Course Number</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model) 
+            {
+                <tr>
+                    <td>@course.CourseId</td>
+                    <td class="nav-link" onclick="openModel(@course.CourseId)">@course.CourseName</td>
+                    <td>@course.CourseNum</td>
+                    <td>@course.Description</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+@foreach (var course in Model) 
+{
+    <div class="CrseStdntModel CrseStdntModel-@course.CourseId">
+        <h3>@course.CourseName Enrolled Students</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student First Name</th>
+                    <th>Student Last Name</th>
+                    <th>Student Id</th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach(var student in course.Students1) 
+        {
+                
+                    <tr>
+                        <td>@student.StuFirstName</td>
+                        <td>@student.StuLastName</td>
+                        <td>@student.StudentId</td>
+                    </tr>
+                  
+        }
+            </tbody>
+        </table>
+        <button onclick= "closeModel(@course.CourseId)">Close</button>
+    </div>
+}
+
+
+
+
+
