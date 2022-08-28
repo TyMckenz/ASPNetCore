@@ -1,11 +1,11 @@
-﻿@model List<Course>
+﻿@model List<Student>
 @{
     ViewData["Title"] = "Students";
 }
 
-@* I know manually entering the data isn't proper, and it isn't how I want to do it,
-    but I currently can't figure out how to get access to the info I need and I'm
-    wasting a Lot of time trying to do it*@
+@*Made a second table to be able to access the students in a for each loop, to save time there. 
+However it made me have to write another list of students because I couldn't figure out how to
+access them from inside the course constructor*@
 
 <div class="text-center">
     <h1 class ="display-4">List Of Students</h1>
@@ -20,54 +20,38 @@
             </tr>
         </thead>
         <tbody>
-             <tr>
-                <td>221</td>
-                <td>Bing</td>
-                <td>Williams</td>
-                <td>bingwill@yuyu.cu</td>
-                <td>111-222-3333</td>
-             </tr>
-             <tr>
-                <td>222</td>
-                <td>Phil</td>
-                <td>Bong</td>
-                <td>philbo@yuyu.cu</td>
-                <td>111-333-4444</td>
-             </tr>
+                        
+            @foreach (var student in Model)
+            {
+
+               <tr>
+                  <td>@student.StuFirstName</td>
+                  <td>@student.StuLastName</td>
+                  <td>@student.StudentId</td>
+                  <td>@student.Email</td>
+                  <td>@student.PhoneNumber</td>
+            </tr>
+
+            }
         </tbody>
     </table>
 
  </div>
 
-
-
-@*                            StudentId = 222,
-                            StuFirstName = "Phil",
-                            StuLastName = "Bong",
-                            Email = "philbo@yuyu.cu",
-                            PhoneNumber = "111-333-4444"
-
-
-
-                            StudentId = 221,
-                            StuFirstName = "Bing",
-                            StuLastName = "Williams",
-                            Email = "bingwill@yuyu.cu",
-                            PhoneNumber = "111-222-3333"*@
-
-@*             @foreach (var student in Student1)
-            {
-
-            <tr>
-                 <td>@student.StuFirstName</td>
-                 <td>@student.StuLastName</td>
-                 <td>@student.StudentId</td>
-                 <td>@student.Email</td>
-                 <td>@student.PhoneNumber</td>
-             </tr>
-
-            }*@
-
+@*<tr>
+    <td>221</td>
+    <td>Bing</td>
+    <td>Williams</td>
+    <td>bingwill@yuyu.cu</td>
+    <td>111-222-3333</td>
+</tr>
+<tr>
+    <td>222</td>
+    <td>Phil</td>
+    <td>Bong</td>
+    <td>philbo@yuyu.cu</td>
+    <td>111-333-4444</td>
+</tr>*@
 
 
 

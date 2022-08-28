@@ -7,6 +7,7 @@ namespace ASPNetCoreWeek1.Controllers
     {
         public List<Course> courses;
         public List<Professor> professor;
+        public List<Student> students;
 
         public RegisterController()
         {
@@ -53,25 +54,45 @@ namespace ASPNetCoreWeek1.Controllers
                         {
                             StudentId = 221,
                             StuFirstName = "Bing",
-                            StuLastName = "Williams",
-                            Email = "bingwill@yuyu.cu",
-                            PhoneNumber = "111-222-3333"
+                            StuLastName = "Williams"
 
                         },
                         new Student
                         {
                             StudentId = 222,
                             StuFirstName = "Phil",
-                            StuLastName = "Bong",
-                            Email = "philbo@yuyu.cu",
-                            PhoneNumber = "111-333-4444"
-
+                            StuLastName = "Bong"
+                      
                         }
                     }
                    
                 }
                     
             };
+
+            students = new List<Student>
+            {
+                  new Student
+                  {
+                      StudentId = 221,
+                      StuFirstName = "Bing",
+                      StuLastName = "Williams",
+                      Email = "bingwill@yuyu.cu",
+                      PhoneNumber = "111-222-3333"
+
+                  },
+                  new Student
+                  {
+                      StudentId = 222,
+                      StuFirstName = "Phil",
+                      StuLastName = "Bong",
+                      Email = "philbo@yuyu.cu",
+                      PhoneNumber = "111-333-4444"
+
+                  }
+
+            };
+            
 
             professor = new List<Professor>()
             {
@@ -108,7 +129,7 @@ namespace ASPNetCoreWeek1.Controllers
         }
         public IActionResult Students()
         {
-            return View(courses);
+            return View(students);
         }
     }
 }
