@@ -1,5 +1,5 @@
 ﻿
-using ASPNetCore.Models;
+using ASPNetCoreWeek1.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASPNetCore.Models

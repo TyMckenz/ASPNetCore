@@ -1,4 +1,4 @@
-﻿using ASPNetCore.Models;
+﻿using ASPNetCoreWeek1.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

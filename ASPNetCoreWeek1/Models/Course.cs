@@ -1,4 +1,4 @@
-﻿namespace ASPNetCore.Models
+﻿namespace ASPNetCoreWeek1.Models
 {
     public class Course
     {
