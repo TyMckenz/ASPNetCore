@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ASPNetCoreWeek1.Models;
+using ASPNetCore.Models;
 
-namespace ASPNetCoreWeek1.Controllers
+namespace ASPNetCore.Controllers
 {
     public class RegisterController : Controller
     {

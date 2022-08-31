@@ -1,8 +1,8 @@
-﻿using ASPNetCoreWeek1.Models;
+﻿using ASPNetCore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ASPNetCoreWeek1.Controllers
+namespace ASPNetCore.Controllers
 {
     public class HomeController : Controller
     {
