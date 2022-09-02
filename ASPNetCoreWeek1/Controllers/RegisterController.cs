@@ -1,134 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ASPNetCoreWeek1.Models;
+using ASPNetCore.Models;
 
 namespace ASPNetCore.Controllers
 {
     public class RegisterController : Controller
     {
-        public List<Course> courses;
-        public List<Professor> professor;
-        public List<Student> students;
+        private readonly RegisterContext _context;
+
+
 
         public RegisterController()
         {
-            courses = new List<Course>()
-            {
-                new Course
-                {
-                    CourseId = 1,
-                    CourseName = "Astronomy",
-                    CourseNum = 551,
-                    Description = "Looking At The Sky For Shapes",
-                    Students1 = new List<Student>
-                    {
-                        new Student
-                        {
-                            StudentId = 221,
-                            StuFirstName = "Bing",
-                            StuLastName = "Williams",
-                            Email = "bingwill@yuyu.cu",
-                            PhoneNumber = "111-222-3333"
 
-                        },
-                        new Student
-                        {
-                            StudentId = 222,
-                            StuFirstName = "Phil",
-                            StuLastName = "Bong",
-                            Email = "philbo@yuyu.cu",
-                            PhoneNumber = "111-333-4444"
-
-                        }
-                    }
-                },
-
-                    new Course
-                {
-                    CourseId = 2,
-                    CourseName = "Computer Racing",
-                    CourseNum = 552,
-                    Description = "See If You Can Beat A Robot In A Race",
-                    Students1 = new List<Student>
-                    {
-                        new Student
-                        {
-                            StudentId = 221,
-                            StuFirstName = "Bing",
-                            StuLastName = "Williams"
-
-                        },
-                        new Student
-                        {
-                            StudentId = 222,
-                            StuFirstName = "Phil",
-                            StuLastName = "Bong"
-                      
-                        }
-                    }
-                   
-                }
-                    
-            };
-
-            students = new List<Student>
-            {
-                  new Student
-                  {
-                      StudentId = 221,
-                      StuFirstName = "Bing",
-                      StuLastName = "Williams",
-                      Email = "bingwill@yuyu.cu",
-                      PhoneNumber = "111-222-3333"
-
-                  },
-                  new Student
-                  {
-                      StudentId = 222,
-                      StuFirstName = "Phil",
-                      StuLastName = "Bong",
-                      Email = "philbo@yuyu.cu",
-                      PhoneNumber = "111-333-4444"
-
-                  }
-
-            };
-            
-
-            professor = new List<Professor>()
-            {
-                new Professor
-                {
-                    ProfId = 110,
-                    ProfFirstName = "Jah",
-                    ProfLastName = "Hoorah",
-                    CourseId = 1
-
-                },
-                new Professor
-                {
-                    ProfId = 111,
-                    ProfFirstName = "Borg",
-                    ProfLastName = "Cyberson",
-                    CourseId= 2
-                }
-
-            };
-
+            _context = new RegisterContext();
            
+
+
         }
-        
+
         public IActionResult Courses()
         {
-           
+            var courses = _context.Courses.ToList();
             return View(courses);
         }
 
         public IActionResult Professors()
         {
-            return View(professor);
+            var professors = _context.Professors.ToList();
+            return View(professors);
         }
         public IActionResult Students()
         {
+            var students = _context.Students.ToList(); 
             return View(students);
         }
     }

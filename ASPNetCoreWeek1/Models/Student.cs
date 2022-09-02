@@ -9,6 +9,6 @@
         public string Email{ get; set; }
         public string PhoneNumber { get; set; }
 
-       public List<Student> InStudents { get; set; }
+       public List<Course> Courses { get; set; }
     }
 }

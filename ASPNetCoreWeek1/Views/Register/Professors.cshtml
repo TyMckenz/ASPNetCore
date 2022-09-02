@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Professor>
 @{
     ViewData["Title"] = "Professors";
 }
@@ -10,7 +10,7 @@
                 <th>Professor ID</th>
                 <th>Professor First Name</th>
                 <th>Professor Last Name</th>
-                <th>Course ID</th>
+                <th>Course Name</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                     <td>@prof.ProfId</td>
                     <td>@prof.ProfFirstName</td>
                     <td>@prof.ProfLastName</td>
-                    <td>@prof.CourseId</td>
+                    <td>@prof.CourseName</td>
                 </tr>
             }
         </tbody>
