@@ -18,8 +18,8 @@ namespace ASPNetCore.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Course>().HasMany(c => c.Students1).WithMany(s => s.Courses);
-           
             modelBuilder.Entity<Professor>().HasOne(p => p.ProfCourse);
+            modelBuilder.Entity<Professor>().HasKey(p => p.ProfId);
         }
     }
 

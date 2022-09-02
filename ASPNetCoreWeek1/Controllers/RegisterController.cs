@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ASPNetCoreWeek1.Models;
 using ASPNetCore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASPNetCore.Controllers
 {
@@ -21,7 +22,7 @@ namespace ASPNetCore.Controllers
 
         public IActionResult Courses()
         {
-            var courses = _context.Courses.ToList();
+            var courses = _context.Courses.Include(c => c.Students1).ToList();
             return View(courses);
         }
 
