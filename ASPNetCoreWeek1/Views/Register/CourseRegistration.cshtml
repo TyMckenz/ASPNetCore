@@ -1,7 +1,19 @@
-﻿
+﻿@model Course
 @{
-    ViewData["Title"] = "CourseRegistration";
+    ViewData["Title"] = "Course Registration";
 }
 
-<h1>Course Registration</h1>
 
+<div class="text-center">
+<h1>Course Registration</h1>
+<form asp-action="SaveCourse">
+        <label asp-for="CourseName">Course Name</label>
+        <input asp-for="CourseName" />
+        <label asp-for="CourseNum">Course Number</label>
+        <input asp-for="CourseNum" />
+        <label asp-for="Description">Course Description</label>
+        <input asp-for="Description" />
+
+        <input type="submit" value="Save" />
+</form>
+</div>

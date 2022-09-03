@@ -36,5 +36,45 @@ namespace ASPNetCore.Controllers
             var students = _context.Students.ToList(); 
             return View(students);
         }
+        public IActionResult CourseRegistration()
+        {
+            
+            return View();
+        }
+        public IActionResult SaveCourse(Course course)
+        {
+            _context.Courses.Add(course);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Courses));
+        }
+        public IActionResult StudentRegistration()
+        {
+
+            return View();
+        }
+
+        public IActionResult SaveStudent(Student student)
+        {
+            _context.Students.Add(student);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Students));
+
+        }
+        public IActionResult ProfessorRegistration()
+        {
+
+            return View();
+        }
+        public IActionResult SaveProfessor(Professor professor)
+        {
+            _context.Professors.Add(professor);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Professors));
+
+        }
+
     }
 }
