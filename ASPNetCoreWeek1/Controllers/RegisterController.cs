@@ -2,6 +2,7 @@
 using ASPNetCoreWeek1.Models;
 using ASPNetCore.Models;
 using Microsoft.EntityFrameworkCore;
+using ASPNetCore.DTO;
 
 namespace ASPNetCore.Controllers
 {
@@ -54,8 +55,24 @@ namespace ASPNetCore.Controllers
             return View();
         }
 
-        public IActionResult SaveStudent(Student student)
+        public IActionResult SaveStudent(StudentDTO studentDTO)
         {
+            var course = _context.Courses.FirstOrDefault(c => c.CourseId == studentDTO.CourseId);
+
+            var student = new Student
+            {
+                
+                StuFirstName = studentDTO.StuFirstName,
+                StuLastName = studentDTO.StuLastName,
+                Email = studentDTO.Email,
+                PhoneNumber = studentDTO.PhoneNumber,
+                Courses = new List<Course>()
+            };
+
+            if (course != null)
+            {
+                student.Courses.Add(course);
+            }
             _context.Students.Add(student);
             _context.SaveChanges();
 
